@@ -11,7 +11,7 @@ public class App {
         while (programIsRunning == true) {
             System.out.println("Choose action: add, remove or show");
     
-            String command = scanner.nextLine().toLowerCase().trim();
+            String command = scanner.nextLine();
     
             switch (command) {
                 case "add":
@@ -29,7 +29,7 @@ public class App {
                     }
                     break;
                 case "show":
-                    System.out.println("Total item: " + travelItemList.size());
+                    System.out.println("Total items: " + travelItemList.size());
                     for (String item : travelItemList) {
                         System.out.println(item);
                     }
