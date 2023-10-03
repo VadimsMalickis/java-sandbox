@@ -19,7 +19,10 @@ public class StudentCsvManager {
     
             while ((line = reader.readLine()) != null) {
                 // Split the line on the comma delimiter
+                String[] lineSplit = line.split(", ");
+
                 Student student = new Student();
+                student.setName(lineSplit[0]);
     
                 // Add the values to the List
                 studentList.add(student);

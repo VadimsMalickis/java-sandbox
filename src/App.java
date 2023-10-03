@@ -6,7 +6,9 @@ public class App {
         
         ArrayList<Student> studentList = StudentCsvManager.getAllStudents();
 
-        System.out.println(studentList);
+        for (Student student : studentList) {
+            System.out.println(student.getName());
+        }
 
 
     }
