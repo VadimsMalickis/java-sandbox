@@ -1,5 +1,8 @@
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class StudentCsvManager {
@@ -41,11 +44,26 @@ public class StudentCsvManager {
 
    
 
-    public static boolean addStudentToCsv(Student student) {
-        // action to add student to our csv file
+     public void addStudentsToCSV(ArrayList<Student> studentList) throws IOException {
+        // veidojam writeri
+        BufferedWriter writer = new BufferedWriter(
+                new FileWriter("/workspaces/java-sandbox/data/students.csv", true)
+            );
+            // Write data
+            for (Student student : studentList) {
+                writer.write(
+                    String.format("%s, %s, %s, %s",
+                    student.name,
+                    student.surname,
+                    student.email, 
+                    student.group)
+                );
+                writer.newLine();
+            }
+            writer.close();
     }
 
      public static boolean removeSingleStudent(Student student) {
-
+        return true;
     }
 }
