@@ -1,11 +1,21 @@
 
 // defining custom class
-public class Student {
-    
-    // class can contain properties (variables)
-    private int age;
-    private String name;
-    private String color;
+public class Student extends Person {
+    public String group;
+    public String name;
+    public String surname;
+    public String email;
+
+    public Student() {
+
+    }
+
+    public Student(String name,String surname, String group, String email) {
+        this.name = name;
+        this.surname = surname;
+        this.group = group;
+        this.email = email;
+    }
 
     public String getName() {
         return this.name;
@@ -15,13 +25,5 @@ public class Student {
         this.name = name;
     }
 
-    // class also can contain methods (some actions aka functions)
-    public String getColor() {
-        return this.color;
-    }
-
-    public void setColor(String colorArgument) {
-        this.color = colorArgument;
-    }
 
 }
