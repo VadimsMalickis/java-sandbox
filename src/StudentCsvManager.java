@@ -16,10 +16,9 @@ public class StudentCsvManager {
 
         try {
             BufferedReader reader = new BufferedReader(new FileReader("/workspaces/java-sandbox/data/students.csv"));
-
             // skip first line with header names
             reader.readLine();
-    
+            
             while ((line = reader.readLine()) != null) {
                 // Split the line on the comma delimiter
                 String[] lineSplit = line.split(", ");
