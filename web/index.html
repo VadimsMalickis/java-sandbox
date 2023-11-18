@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 style="color: blue;">my website</h1>
+
+    <p id="uniqueId">123</p>
+
+    <script>
+
+          var serverResponse = "{\"status\":\"saved\"}";
+            // convert string to JS object
+          var jsonObject = JSON.parse(serverResponse);
+
+
+          console.log(jsonObject);
+
+          var element = document.querySelector("#uniqueId");
+            // panemu elementu, un ierakstu savu teksta vērtību
+          element.textContent = jsonObject.name;
+
+          if (jsonObject.status == 'saved') {
+            alert("Viss ir ok!!");
+          }
+    </script>
+</body>
+</html>
