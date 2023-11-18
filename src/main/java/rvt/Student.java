@@ -1,4 +1,6 @@
 
+package rvt;
+
 // defining custom class
 public class Student extends Person {
     public String group;

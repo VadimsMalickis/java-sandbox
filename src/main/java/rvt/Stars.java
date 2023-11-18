@@ -1,3 +1,5 @@
+package rvt;
+
 public class Stars {
 
     public static String star = "*";
