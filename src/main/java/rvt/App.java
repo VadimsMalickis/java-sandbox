@@ -1,9 +1,15 @@
 package rvt;
 
+import java.util.ArrayList;
+
 public class App 
 {
     public static void main( String[] args )
     {
-        System.out.println(ConsoleColors.GREEN + "Hello World!" );
+        ArrayList<Student> students = StudentCsvManager.getAllStudents();
+
+        for (Student student : students) {
+            System.out.println(student.toJsonString());
+        }
     }
 }

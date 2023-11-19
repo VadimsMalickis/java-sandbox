@@ -5,6 +5,8 @@ import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 
 public class StudentCsvManager {
@@ -17,7 +19,8 @@ public class StudentCsvManager {
         String line;
 
         try {
-            BufferedReader reader = new BufferedReader(new FileReader("/workspaces/java-sandbox/data/students.csv"));
+            InputStream is = StudentCsvManager.class.getClassLoader().getResourceAsStream("data/students.csv");
+            BufferedReader reader = new BufferedReader(new InputStreamReader(is));         
             // skip first line with header names
             reader.readLine();
             
@@ -25,8 +28,7 @@ public class StudentCsvManager {
                 // Split the line on the comma delimiter
                 String[] lineSplit = line.split(", ");
 
-                Student student = new Student();
-                student.setName(lineSplit[0]);
+                Student student = new Student(lineSplit[0], lineSplit[1], lineSplit[2], lineSplit[3]);
     
                 // Add the values to the List
                 studentList.add(student);
@@ -35,8 +37,8 @@ public class StudentCsvManager {
             // Close the BufferedReader object
             reader.close();
             
-        } catch (Exception e) {
-            // TODO: handle exception
+        } catch (IOException e) {
+            System.out.println("CSV file not found!");
         }
 
 
