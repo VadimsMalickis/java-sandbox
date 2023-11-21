@@ -41,6 +41,14 @@
 
         <plugin>
           <artifactId>maven-assembly-plugin</artifactId>
+           <executions>
+            <execution>
+                <phase>package</phase>
+                <goals>
+                    <goal>single</goal>
+                </goals>
+            </execution>
+            </executions>
           <configuration>
             <archive>
               <manifest>
@@ -75,6 +83,13 @@
   </build>
 
   <dependencies>
+
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-csv</artifactId>
+      <version>1.10.0</version>
+    </dependency>
+
 
     <dependency>
       <groupId>org.json</groupId>
