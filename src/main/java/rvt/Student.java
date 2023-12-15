@@ -3,7 +3,7 @@ package rvt;
 import org.json.JSONObject;
 
 // defining custom class
-public class Student extends Person {
+public class Student {
     public String group;
     public String name;
     public String surname;

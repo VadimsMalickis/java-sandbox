@@ -5,11 +5,12 @@ import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.util.ArrayList;
 
 public class StudentCsvManager {
+
+    public static final String  STUDENT_CSV = "/workspaces/java-sandbox/data/students.csv";
+
     public static ArrayList getAllStudents() {
 
         // Create a List to store the CSV data
@@ -19,8 +20,7 @@ public class StudentCsvManager {
         String line;
 
         try {
-            InputStream is = StudentCsvManager.class.getClassLoader().getResourceAsStream("data/students.csv");
-            BufferedReader reader = new BufferedReader(new InputStreamReader(is));         
+            BufferedReader reader = new BufferedReader(new FileReader(STUDENT_CSV));         
             // skip first line with header names
             reader.readLine();
             
@@ -50,7 +50,7 @@ public class StudentCsvManager {
      public void addStudentsToCSV(ArrayList<Student> studentList) throws IOException {
         // veidojam writeri
         BufferedWriter writer = new BufferedWriter(
-                new FileWriter("/workspaces/java-sandbox/data/students.csv", true)
+                new FileWriter(STUDENT_CSV, true)
             );
             // Write data
             for (Student student : studentList) {
