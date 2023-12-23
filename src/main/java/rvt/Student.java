@@ -23,10 +23,18 @@ public class Student {
     public String getName() {
         return this.name;
     }
+    public String getSurname() {
+        return this.surname;
+    }
+    public String getEmail() {
+        return this.email;
+    }
+    public String getGroup() {
+        return this.group;
+    }
 
-
-    public void setName(String name) {
-        this.name = name;
+    public String toString() {
+        return String.format("{%s, %s, %s, %s}", this.name, this.surname, this.email, this.group);
     }
 
     public String toJsonString() {
@@ -38,5 +46,13 @@ public class Student {
         return jsonObject.toString();
     }
 
+    public String[] toArray() {
+        return new String[] {
+            this.name,
+            this.surname,
+            this.email,
+            this.group
+        };
+    }
 
 }

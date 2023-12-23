@@ -1,4 +1,4 @@
-package rvt;
+package rvt.exercises;
 
 import javax.swing.*;
 import java.awt.event.*;
