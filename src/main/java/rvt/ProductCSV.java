@@ -9,16 +9,15 @@ import java.util.ArrayList;
 public class ProductCSV {
 
     private static final InputStream is = ProductCSV.class.getResourceAsStream("/data/products.csv");
-    private static final InputStreamReader isr = new InputStreamReader(is);
 
-
+    
     public static ArrayList<Product> loadAllProducts() {
         // Create a List to store the CSV data
         ArrayList<Product> productList = new ArrayList<>();
         // Read each line of the CSV file
         String line;
 
-        try (BufferedReader reader = new BufferedReader(ProductCSV.isr)) {
+        try (BufferedReader reader = new BufferedReader(new InputStreamReader(ProductCSV.is))) {
             // skip first line with header names
             reader.readLine();
 
