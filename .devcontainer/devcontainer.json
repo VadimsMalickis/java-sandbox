@@ -11,7 +11,10 @@
 			"installMaven": "true",
 			"installGradle": "false"
 		},
-		"ghcr.io/devcontainers/features/github-cli:1": {}
+		"ghcr.io/devcontainers/features/github-cli:1": {},
+		"ghcr.io/devcontainers/features/node:1": {
+			"installNpm": "true"
+		}
 	}
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
